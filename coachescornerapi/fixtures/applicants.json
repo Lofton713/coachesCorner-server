@@ -1,0 +1,50 @@
+[
+    {
+        "model": "coachescornerapi.Applicant",
+        "pk": 1,
+        "fields": {
+            "open_spot": 1,
+            "player": 1
+            }
+    },
+    {
+        "model": "coachescornerapi.Applicant",
+        "pk": 2,
+        "fields": {
+            "open_spot": 1,
+            "player": 7
+            }
+    },
+    {
+        "model": "coachescornerapi.Applicant",
+        "pk": 3,
+        "fields": {
+            "open_spot": 1,
+            "player": 10
+            }
+    },
+    {
+        "model": "coachescornerapi.Applicant",
+        "pk": 4,
+        "fields": {
+            "open_spot": 3,
+            "player": 5
+            }
+    },
+    {
+        "model": "coachescornerapi.Applicant",
+        "pk": 5,
+        "fields": {
+            "open_spot": 2,
+            "player": 8
+            }
+    },
+    {
+        "model": "coachescornerapi.Applicant",
+        "pk": 6,
+        "fields": {
+            "open_spot": 4,
+            "player": 7
+            }
+    }
+]

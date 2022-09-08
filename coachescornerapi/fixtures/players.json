@@ -1,0 +1,135 @@
+[   
+  {
+    "model": "coachescornerapi.Player",
+    "Pk": 1,
+    "fields":
+    {
+        "birthday": "2019-05-23",
+        "bio": "Profit-focused tangible success",
+        "GPA": 2.4,
+        "hometown": "Sunnyvale",
+        "state": "California",
+        "profile_pic": "http://dummyimage.com/165x100.png/ff4444/ffffff",
+        "user": 8
+    }
+  },
+  {
+        "model": "coachescornerapi.Player",
+        "Pk": 2,
+        "fields":{
+        "birthday": "2007-07-17",
+        "bio": "Implemented hybrid middleware",
+        "GPA": 3.2,
+        "hometown": "Huntington",
+        "state": "West Virginia",
+        "profile_pic": "http://dummyimage.com/249x100.png/5fa2dd/ffffff",
+        "user": 9
+    }
+  },
+  {
+    "model": "coachescornerapi.Player",
+    "Pk": 3,
+    "fields": {
+        "birthday": "2022-03-18",
+        "bio": "Mandatory value-added artificial intelligence",
+        "GPA": 2.8,
+        "hometown": "Springfield",
+        "state": "Missouri",
+        "profile_pic": "http://dummyimage.com/204x100.png/dddddd/000000",
+        "user": 10
+      }
+  },
+  {
+    "model": "coachescornerapi.Player",
+    "Pk": 4,
+    "fields":{
+        "birthday": "2018-01-01",
+        "bio": "Team-oriented non-volatile customer loyalty",
+        "GPA": 3.9,
+        "hometown": "Apache Junction",
+        "state": "Arizona",
+        "profile_pic": "http://dummyimage.com/100x100.png/cc0000/ffffff",
+        "user": 11
+    }
+  },
+  {
+    "model": "coachescornerapi.Player",
+    "Pk": 5,
+    "fields": {
+        "birthday": "2009-11-22",
+        "bio": "Extended executive extranet",
+        "GPA": 3.0,
+        "hometown": "Albany",
+        "state": "New York",
+        "profile_pic": "http://dummyimage.com/215x100.png/ff4444/ffffff",
+        "user": 12
+      }
+  },
+  {
+    "model": "coachescornerapi.Player",
+    "Pk": 6,
+    "fields": {
+        "birthday": "2007-09-15",
+        "bio": "Seamless fault-tolerant info-mediaries",
+        "GPA": 3.7,
+        "hometown": "Los Angeles",
+        "state": "California",
+        "profile_pic": "http://dummyimage.com/211x100.png/ff4444/ffffff",
+        "user": 13
+      }
+  },
+  {
+    "model": "coachescornerapi.Player",
+    "Pk": 7,
+    "fields": {
+        "birthday": "2015-03-20",
+        "bio": "Switchable demand-driven capacity",
+        "GPA": 1.2,
+        "hometown": "Columbia",
+        "state": "South Carolina",
+        "profile_pic": "http://dummyimage.com/156x100.png/5fa2dd/ffffff",
+        "user": 14
+      }
+  },
+  {
+    "model": "coachescornerapi.Player",
+    "Pk": 8,
+    "fields": {
+        "birthday": "2013-10-22",
+        "bio": "User-centric disintermediate application",
+        "GPA": 2.2,
+        "hometown": "Nashville",
+        "state": "Tennessee",
+        "profile_pic": "http://dummyimage.com/249x100.png/5fa2dd/ffffff",
+        "user": 15
+      }
+  },
+  {
+    "model": "coachescornerapi.Player",
+    "Pk": 9,
+    "fields": {
+        "birthday": "2003-01-30",
+        "bio": "Open-source secondary open architecture",
+        "GPA": 1.7,
+        "hometown": "Whittier",
+        "state": "California",
+        "profile_pic": "http://dummyimage.com/220x100.png/cc0000/ffffff",
+        "user": 16
+      }
+  },
+  {
+    "model": "coachescornerapi.Player",
+    "Pk": 10,
+    "fields": {
+      "birthday": "2003-05-05",
+      "bio": "Cross-platform 6th generation flexibility",
+      "GPA": 2.0,
+      "hometown": "Dallas",
+      "state": "Texas",
+      "profile_pic": "http://dummyimage.com/214x100.png/cc0000/ffffff",
+      "user": 17
+    }
+  }
+]
+
+  

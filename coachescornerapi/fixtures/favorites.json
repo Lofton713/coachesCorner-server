@@ -1,0 +1,50 @@
+[
+    {
+        "model": "coachescornerapi.Favorite",
+        "pk": 1,
+        "fields": {
+            "player": 1,
+            "college": 1
+        }
+    },
+    {
+        "model": "coachescornerapi.Favorite",
+        "pk": 2,
+        "fields": {
+            "player": 1,
+            "college": 4
+        }
+    },
+    {
+        "model": "coachescornerapi.Favorite",
+        "pk": 3,
+        "fields": {
+            "player": 2,
+            "college": 5
+        }
+    },
+    {
+        "model": "coachescornerapi.Favorite",
+        "pk": 4,
+        "fields": {
+            "player": 3,
+            "college": 3
+        }
+    },
+    {
+        "model": "coachescornerapi.Favorite",
+        "pk": 5,
+        "fields": {
+            "player": 3,
+            "college": 5
+        }
+    },
+    {
+        "model": "coachescornerapi.Favorite",
+        "pk": 6,
+        "fields": {
+            "player": 7,
+            "college": 4
+        }
+    }
+]

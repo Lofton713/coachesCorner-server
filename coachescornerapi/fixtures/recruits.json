@@ -1,0 +1,90 @@
+[
+    {
+        "model":"coachescornerapi.Recruit",
+        "pk": 1,
+        "fields": {
+            "coach": 1,
+            "player": 1
+        }
+    },
+    {
+        "model":"coachescornerapi.Recruit",
+        "pk": 2,
+        "fields": {
+            "coach": 1,
+            "player": 2
+        }
+    },
+    {
+        "model":"coachescornerapi.Recruit",
+        "pk": 3,
+        "fields": {
+            "coach": 1,
+            "player": 10
+        }
+    },
+    {
+        "model":"coachescornerapi.Recruit",
+        "pk": 4,
+        "fields": {
+            "coach": 2,
+            "player": 5
+        }
+    },
+    {
+        "model":"coachescornerapi.Recruit",
+        "pk": 5,
+        "fields": {
+            "coach": 3,
+            "player": 2
+        }
+    },
+    {
+        "model":"coachescornerapi.Recruit",
+        "pk": 6,
+        "fields": {
+            "coach": 3,
+            "player": 7
+        }
+    },
+    {
+        "model":"coachescornerapi.Recruit",
+        "pk": 7,
+        "fields": {
+            "coach": 4,
+            "player": 9
+        }
+    },
+    {
+        "model":"coachescornerapi.Recruit",
+        "pk": 8,
+        "fields": {
+            "coach": 5,
+            "player": 1
+        }
+    },
+    {
+        "model":"coachescornerapi.Recruit",
+        "pk": 9,
+        "fields": {
+            "coach": 5,
+            "player": 2
+        }
+    },
+    {
+        "model":"coachescornerapi.Recruit",
+        "pk": 10,
+        "fields": {
+            "coach": 1,
+            "player": 8
+        }
+    },
+    {
+        "model":"coachescornerapi.Recruit",
+        "pk": 11,
+        "fields": {
+            "coach": 1,
+            "player": 6
+        }
+    }
+]

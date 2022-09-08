@@ -1,0 +1,101 @@
+[
+    {
+        "model": "coachescornerapi.College",
+        "pk": 1,
+        "fields": {
+            "name": "University of Albuquerque",
+            "location": "Albuquerque, NM",
+            "min_GPA": "2.0"
+        }
+    },
+    {
+        "model": "coachescornerapi.College",
+        "pk": 2,
+        "fields": {
+            "name": "Southwest University",
+            "location": "Flagstaff, AZ",
+            "min_GPA": "2.5"
+        }
+    },
+    {
+        "model": "coachescornerapi.College",
+        "pk": 3,
+        "fields": {
+            "name": "Canada Institute of Technology",
+            "location": "Seattle, WA",
+            "min_GPA": "3.0"
+        }
+    },
+    {
+        "model": "coachescornerapi.College",
+        "pk": 4,
+        "fields": {
+            "name": "The SEC University",
+            "location": "Mobile, Al",
+            "min_GPA": "2.0"
+        }
+    },
+    {
+        "model": "coachescornerapi.College",
+        "pk": 5,
+        "fields": {
+            "name": "South Central College",
+            "location": "Las Angeles, CA",
+            "min_GPA": "2.5"
+        }
+    },
+    {
+        "model": "coachescornerapi.College",
+        "pk": 6,
+        "fields": {
+            "name": "Universidade Estadual de Santa Fe",
+            "location": "Santa Fe, NM",
+            "min_GPA": "2.0"
+        }
+    },
+    {
+        "model": "coachescornerapi.College",
+        "pk": 7,
+        "fields": {
+            "name": "University of South Dakota",
+            "location": "Bismark, SD",
+            "min_GPA": "2.0"
+        }
+    },
+    {
+        "model": "coachescornerapi.College",
+        "pk": 8,
+        "fields": {
+            "name": "University of Texas",
+            "location": "Austin, TX",
+            "min_GPA": "2.0"
+        }
+    },
+    {
+        "model": "coachescornerapi.College",
+        "pk": 9,
+        "fields": {
+            "name": "North Cal State",
+            "location": "Chico, CA",
+            "min_GPA": "3.0"
+        }
+    },
+    {
+        "model": "coachescornerapi.College",
+        "pk": 10,
+        "fields": {
+            "name": "University of NY",
+            "location": "New York, Ny",
+            "min_GPA": "2.5"
+        }
+    },
+    {
+        "model": "coachescornerapi.College",
+        "pk": 11,
+        "fields": {
+            "name": "The Soccer Academy",
+            "location": "Miami, FL",
+            "min_GPA": "2.0"
+        }
+    }
+]

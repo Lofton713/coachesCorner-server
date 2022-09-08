@@ -1,0 +1,50 @@
+[
+    {
+        "model": "coachescornerapi.Attendee",
+        "pk": 1,
+        "fields": {
+            "coach": 1,
+            "game": 1
+        }
+    },
+    {
+        "model": "coachescornerapi.Attendee",
+        "pk": 2,
+        "fields": {
+            "coach": 1,
+            "game": 5
+        }
+    },
+    {
+        "model": "coachescornerapi.Attendee",
+        "pk": 3,
+        "fields": {
+            "coach": 2,
+            "game": 3
+        }
+    },
+    {
+        "model": "coachescornerapi.Attendee",
+        "pk": 4,
+        "fields": {
+            "coach": 3,
+            "game": 1
+        }
+    },
+    {
+        "model": "coachescornerapi.Attendee",
+        "pk": 5,
+        "fields": {
+            "coach": 2,
+            "game": 5
+        }
+    },
+    {
+        "model": "coachescornerapi.Attendee",
+        "pk": 6,
+        "fields": {
+            "coach": 5,
+            "game": 1
+        }
+    }
+]
