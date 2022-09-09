@@ -2,7 +2,7 @@
     "model": "coachescornerapi.Coach",
     "Pk": 1,
     "fields":{
-    "college": "University of Albuquerque",
+    "college": 1,
     "bio": "Open-architected regional Graphic Interface",
     "profile_pic": "http://dummyimage.com/187x100.png/5fa2dd/ffffff",
     "recruits": [6, 1, 7],
@@ -13,7 +13,7 @@
     "model": "coachescornerapi.Coach",
     "Pk": 2,
     "fields":{
-    "college": "Southwest University",
+    "college": 2,
     "bio": "Operative needs-based leverage",
     "profile_pic": "http://dummyimage.com/199x100.png/dddddd/000000",
     "recruits": [5, 2, 4],
@@ -24,7 +24,7 @@
     "model": "coachescornerapi.Coach",
     "Pk": 3,
     "fields":{
-    "college": "Canada Institute of Technology",
+    "college": 3,
     "bio": "Assimilated real-time productivity",
     "profile_pic": "http://dummyimage.com/157x100.png/ff4444/ffffff",
     "recruits": [4, 2, 9],
@@ -35,7 +35,7 @@
     "model": "coachescornerapi.Coach",
     "Pk": 4,
     "fields":{
-    "college": "The SEC University",
+    "college": 4,
     "bio": "Sharable object-oriented contingency",
     "profile_pic": "http://dummyimage.com/248x100.png/cc0000/ffffff",
     "recruits": [9, 10],
@@ -46,7 +46,7 @@
     "model": "coachescornerapi.Coach",
     "Pk": 5,
     "fields":{
-    "college": "South Central College",
+    "college": 5,
     "bio": "Down-sized executive initiative",
     "profile_pic": "http://dummyimage.com/156x100.png/cc0000/ffffff",
     "recruits": [7, 8, 9],
@@ -57,7 +57,7 @@
     "model": "coachescornerapi.Coach",
     "Pk": 6,
     "fields":{
-    "college": "Universidade Estadual de Santa Fe",
+    "college": 6,
     "bio": "Managed dedicated secured line",
     "profile_pic": "http://dummyimage.com/114x100.png/5fa2dd/ffffff",
     "recruits": [8],
@@ -68,7 +68,7 @@
     "model": "coachescornerapi.Coach",
     "Pk": 7,
     "fields":{
-    "college": "University of South Dakota",
+    "college": 7,
     "bio": "Re-engineered upward-trending portal",
     "profile_pic": "http://dummyimage.com/100x100.png/5fa2dd/ffffff",
     "recruits": [1, 4, 10],
