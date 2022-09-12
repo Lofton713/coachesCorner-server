@@ -18,13 +18,15 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework import routers
 
-from coachescornerapi.views.auth import login_user
+from coachescornerapi.views.auth import login_user,register_Player,register_coach
 
 router = routers.DefaultRouter(trailing_slash=False)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login', login_user),
+    path('registerPlayer', register_Player),
+    path('registerCoach', register_coach)
     
     
 ]

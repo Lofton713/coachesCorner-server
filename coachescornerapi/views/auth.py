@@ -28,7 +28,9 @@ def login_user(request):
         token = Token.objects.get(user=authenticated_user)
         data = {
             'valid': True,
-            'token': token.key
+            'token': token.key,
+            'user_id': authenticated_user.id,
+            'is_staff': authenticated_user.is_staff
         }
         return Response(data)
     else:
@@ -38,7 +40,7 @@ def login_user(request):
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
-def register_user(request):
+def register_coach(request):
     '''Handles the creation of a new player or coach for authentication
 
     Method arguments:
@@ -58,11 +60,48 @@ def register_user(request):
     # Now save the extra info in the coaches table
     coach = Coach.objects.create(
         bio=request.data['bio'],
+        profile_pic=request.data['profile_pic'],
         user=new_coach
     )
 
     # Use the REST Framework's token generator on the new user account
     token = Token.objects.create(user=coach.user)
     # Return the token to the client
-    data = { 'token': token.key, 'is_staff': new_coach.is_staff }
+    data = { 'token': token.key, 'is_staff': True, 'user_id': new_coach.id }
+    return Response(data)
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def register_Player(request):
+    '''Handles the creation of a new player for authentication
+
+    Method arguments:
+      request -- The full HTTP request object
+    '''
+
+    # Create a new user by invoking the `create_user` helper method
+    # on Django's built-in User model
+    new_player = User.objects.create_user(
+        username=request.data['username'],
+        password=request.data['password'],
+        first_name=request.data['first_name'],
+        last_name=request.data['last_name'],
+        email=request.data['email']
+    )
+
+    # Now save the extra info in the coaches table
+    player = Player.objects.create(
+        birthday=request.data['birthday'],
+        bio=request.data['bio'],
+        GPA=request.data['GPA'],
+        hometown=request.data['hometown'],
+        state=request.data['state'],
+        profile_pic=request.data['profile_pic'],
+        user=new_player
+    )
+
+    # Use the REST Framework's token generator on the new user account
+    token = Token.objects.create(user=player.user)
+    # Return the token to the client
+    data = { 'token': token.key, 'user_id': new_player.id}
     return Response(data)
