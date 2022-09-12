@@ -8,10 +8,10 @@ import uuid
 import base64
 
 class PlayerView(ViewSet):
-    """Rare User view"""
+    """Player view"""
 
     def retrieve(self, request, pk):
-        """handle GET requests for a single user
+        """handle GET requests for a single player
         """
 
         try:
@@ -22,12 +22,12 @@ class PlayerView(ViewSet):
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
         
     def list(self, request):
-        """Handle GET requests to get all RareUsers
+        """Handle GET requests to get all players
 
         Returns:
-            Response -- JSON serialized list of RareUsers
+            Response -- JSON serialized list of players
         """
-        players = Player.objects.all().order_by("player__username")
+        players = Player.objects.all()
         
         serializer = PlayerSerializer(players, many=True)
         return Response(serializer.data)

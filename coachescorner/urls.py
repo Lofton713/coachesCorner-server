@@ -13,20 +13,28 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from xml.etree.ElementInclude import include
+
+from django.conf.urls import include
 from django.contrib import admin
 from django.urls import path
 from rest_framework import routers
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 from coachescornerapi.views.auth import login_user,register_Player,register_coach
+from coachescornerapi.views.player import PlayerView
 
 router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'players', PlayerView, 'player')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login', login_user),
     path('registerPlayer', register_Player),
-    path('registerCoach', register_coach)
+    path('registerCoach', register_coach),
     
+    path('', include(router.urls))
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     
-]
