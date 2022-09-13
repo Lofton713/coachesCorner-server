@@ -1,34 +1,34 @@
 from rest_framework.viewsets import ViewSet
-from coachescornerapi.models.player import Player
+from coachescornerapi.models.coach import Coach
 from rest_framework.response import Response
 from rest_framework import serializers, status
 from rest_framework.decorators import action
 from django.contrib.auth.models import User
 
 
-class PlayerView(ViewSet):
-    """Player view"""
+class CoachView(ViewSet):
+    """Coach view"""
 
     def retrieve(self, request, pk):
-        """handle GET requests for a single player
+        """handle GET requests for a single coach
         """
 
         try:
-            user = Player.objects.get(pk=pk)
-            serializer = PlayerSerializer(user)
+            user = Coach.objects.get(pk=pk)
+            serializer = CoachSerializer(user)
             return Response(serializer.data)
-        except Player.DoesNotExist as ex:
+        except Coach.DoesNotExist as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
         
     def list(self, request):
-        """Handle GET requests to get all players
+        """Handle GET requests to get all coaches
 
         Returns:
-            Response -- JSON serialized list of players
+            Response -- JSON serialized list of coaches
         """
-        players = Player.objects.all()
+        coaches = Coach.objects.all()
         
-        serializer = PlayerSerializer(players, many=True)
+        serializer = CoachSerializer(coaches, many=True)
         return Response(serializer.data)
         
 class UserSerializer(serializers.ModelSerializer):
@@ -36,9 +36,9 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ('id', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active')
         
-class PlayerSerializer(serializers.ModelSerializer):
+class CoachSerializer(serializers.ModelSerializer):
     """JSON serializer for Players"""
     user = UserSerializer()
     class Meta:
-        model = Player
-        fields = ('id',  'user', 'bio', 'profile_pic', 'birthday', 'hometown', 'state', 'GPA',)
+        model = Coach
+        fields = ('id',  'user', 'bio', 'profile_pic', 'recruits')
