@@ -2,6 +2,7 @@ from rest_framework.viewsets import ViewSet
 from coachescornerapi.models.game import Game
 from rest_framework.response import Response
 from rest_framework import serializers, status
+from coachescornerapi.models.player import Player
 
 from coachescornerapi.views.player import PlayerSerializer
 
@@ -30,6 +31,10 @@ class GameView(ViewSet):
             Response: JSON serialized list of tags
         """
         games = Game.objects.all()
+        
+        user = request.query_params.get('user', None)
+        if user is not None:
+            games = Game.objects.filter(player=user)
 
         serializer = GameSerializer(games, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)

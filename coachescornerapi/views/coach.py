@@ -5,6 +5,8 @@ from rest_framework import serializers, status
 from rest_framework.decorators import action
 from django.contrib.auth.models import User
 
+from coachescornerapi.views.college import CollegeSerializer
+
 
 class CoachView(ViewSet):
     """Coach view"""
@@ -39,6 +41,7 @@ class UserSerializer(serializers.ModelSerializer):
 class CoachSerializer(serializers.ModelSerializer):
     """JSON serializer for Players"""
     user = UserSerializer()
+    college = CollegeSerializer()
     class Meta:
         model = Coach
         fields = ('id',  'user', 'bio', 'profile_pic', 'recruits', 'college')
