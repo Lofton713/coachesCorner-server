@@ -1,4 +1,6 @@
 from rest_framework.viewsets import ViewSet
+from coachescornerapi.models.coach import Coach
+from coachescornerapi.models.college import College
 from coachescornerapi.models.open_spot import Open_spot
 from rest_framework.response import Response
 from rest_framework import serializers, status
@@ -35,6 +37,27 @@ class OpenSpotView(ViewSet):
 
         serializer = OpenSpotSerializer(open_spots, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    def create(self, request):
+        """ POST operation for a new Open Spot
+
+        Returns:
+            Response: JSON serialized open_spot instance
+        """
+        user = Coach.objects.get(user=request.auth.user)
+        college = College.objects.get(pk=request.data["college"])
+        
+        open_spot = Open_spot.objects.create(
+            position=request.data["position"],
+            description=request.data["description"],
+            posted_by=user,
+            college=college
+        )
+
+        serializer = OpenSpotSerializer(open_spot)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+    
         
 class OpenSpotSerializer(serializers.ModelSerializer):
     posted_by = CoachSerializer()
