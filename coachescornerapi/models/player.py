@@ -10,3 +10,5 @@ class Player(models.Model):
     state = models.CharField(max_length=2)
     profile_pic = models.ImageField(upload_to='profilepics', height_field=None,
         width_field=None, max_length=None, null=True)
+    position = models.CharField(max_length=20)
+    grade = models.CharField(max_length=20) 

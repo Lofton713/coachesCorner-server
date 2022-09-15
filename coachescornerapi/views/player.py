@@ -41,4 +41,4 @@ class PlayerSerializer(serializers.ModelSerializer):
     user = UserSerializer()
     class Meta:
         model = Player
-        fields = ('id',  'user', 'bio', 'profile_pic', 'birthday', 'hometown', 'state', 'GPA',)
+        fields = ('id',  'user', 'bio', 'profile_pic', 'birthday', 'hometown', 'state', 'GPA', 'grade', 'position')
