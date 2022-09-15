@@ -6,6 +6,8 @@ from rest_framework.decorators import action
 from django.contrib.auth.models import User
 
 from coachescornerapi.models.recruit import Recruit
+from coachescornerapi.views.coach import CoachSerializer
+from coachescornerapi.views.player import PlayerSerializer
 
 
 class RecruitView(ViewSet):
@@ -30,18 +32,17 @@ class RecruitView(ViewSet):
             Response: JSON serialized list of tags
         """
         recruits = Recruit.objects.all()
+        
+        coach = request.query_params.get('coach', None)
+        if coach is not None:
+            recruits = Recruit.objects.filter(coach=coach)
 
         serializer = RecruitSerializer(recruits, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
-        
-    
-        
 
-        
 class RecruitSerializer(serializers.ModelSerializer):
     """JSON serializer for Recruits"""
-    
+    player = PlayerSerializer()
     class Meta:
         model = Recruit
-        fields = ('id',  'coach_id', 'player_id')
-        depth = 2
+        fields = ('id',  'coach_id', 'player')
