@@ -12,7 +12,7 @@
         "profile_pic": "http://dummyimage.com/165x100.png/ff4444/ffffff",
         "user": 8,
         "grade": "Sophomore",
-        "Position": "midfielder"
+        "position": "midfielder"
     }
   },
   {
@@ -27,7 +27,7 @@
         "profile_pic": "http://dummyimage.com/249x100.png/5fa2dd/ffffff",
         "user": 9,
         "grade": "Senior",
-        "Position": "forward"
+        "position": "forward"
     }
   },
   {
@@ -42,7 +42,7 @@
         "profile_pic": "http://dummyimage.com/204x100.png/dddddd/000000",
         "user": 10,
         "grade": "homeschool",
-        "Position": "defender"
+        "position": "defender"
       }
   },
   {
@@ -57,7 +57,7 @@
         "profile_pic": "http://dummyimage.com/100x100.png/cc0000/ffffff",
         "user": 11,
         "grade": "Junior",
-        "Position": "goalie"
+        "position": "goalie"
     }
   },
   {
@@ -72,7 +72,7 @@
         "profile_pic": "http://dummyimage.com/215x100.png/ff4444/ffffff",
         "user": 12,
         "grade": "Sophomore",
-        "Position": "midfielder"
+        "position": "midfielder"
       }
   },
   {
@@ -87,7 +87,7 @@
         "profile_pic": "http://dummyimage.com/211x100.png/ff4444/ffffff",
         "user": 13,
         "grade": "8th",
-        "Position": "forward"
+        "position": "forward"
       }
   },
   {
@@ -102,7 +102,7 @@
         "profile_pic": "http://dummyimage.com/156x100.png/5fa2dd/ffffff",
         "user": 14,
         "grade": "Freshman",
-        "Position": "goalie"
+        "position": "goalie"
         
       }
   },
@@ -118,7 +118,7 @@
         "profile_pic": "http://dummyimage.com/249x100.png/5fa2dd/ffffff",
         "user": 15,
         "grade": "Sophomore",
-        "Position": "midfielder"
+        "position": "midfielder"
       }
   },
   {
@@ -133,7 +133,7 @@
         "profile_pic": "http://dummyimage.com/220x100.png/cc0000/ffffff",
         "user": 16,
         "grade": "7th",
-        "Position": "center mid"
+        "position": "center mid"
       }
   },
   {
@@ -148,7 +148,7 @@
       "profile_pic": "http://dummyimage.com/214x100.png/cc0000/ffffff",
       "user": 17,
       "grade": "8th",
-      "Position": "forward"
+      "position": "forward"
     }
   }
 ]
