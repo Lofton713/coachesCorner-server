@@ -46,6 +46,11 @@ class AttendeeView(ViewSet):
 
         serializer = AttendeeSerializer(attendee)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+    def destroy(self, request, pk):
+        attendee = Attendee.objects.get(pk=pk)
+        attendee.delete()
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
         
         
 class AttendeeSerializer(serializers.ModelSerializer):

@@ -8,3 +8,11 @@ class Game(models.Model):
     time = models.TimeField()
     description = models.TextField(max_length=100)
     attendees = models.ManyToManyField("Coach", through="Attendee", related_name="attending")
+    
+@property
+def joined(self):
+    return self.__joined
+
+@joined.setter
+def joined(self, value):
+    self.__joined = value
