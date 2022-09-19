@@ -5,10 +5,11 @@ from coachescornerapi.models.favorites import Favorite
 from rest_framework.response import Response
 from rest_framework import serializers, status
 
+
 from coachescornerapi.views.player import PlayerSerializer
 from coachescornerapi.views.college import CollegeSerializer
 
-class OpenSpotView(ViewSet):
+class FavoriteView(ViewSet):
     """Open_spot view"""
 
     def retrieve(self, request, pk):
@@ -29,15 +30,16 @@ class OpenSpotView(ViewSet):
         Returns: 
             Response: JSON serialized list of open_spots
         """
-        favorite = Favorite.objects.all()
+        favorites = Favorite.objects.all()
         
         user = request.query_params.get('user', None)
         if user is not None:
-            favorite = Favorite.objects.filter(player=user)
+            favorites = Favorite.objects.filter(player=user)
 
-        serializer = FavoriteSerializer(favorite, many=True)
+        serializer = FavoriteSerializer(favorites, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
+  
     def create(self, request):
         """ POST operation for a new Open Spot
 
