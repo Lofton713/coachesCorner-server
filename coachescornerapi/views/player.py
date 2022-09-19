@@ -30,6 +30,28 @@ class PlayerView(ViewSet):
         
         serializer = PlayerSerializer(players, many=True)
         return Response(serializer.data)
+    
+    def update(self, request, pk):
+        """handle put"""
+        
+        player = Player.objects.get(pk=pk)
+        user = User.objects.get(pk=pk)
+        
+        player.bio = request.data["bio"]
+        player.birthday = request.data["birthday"]
+        player.GPA = request.data["GPA"]
+        player.hometown = request.data["hometown"]
+        player.state = request.data["state"]
+        player.position = request.data["position"]
+        player.grade = request.data["grade"]
+        user.first_name = request.data["first_name"]
+        user.last_name = request.data["last_name"]
+        user.email = request.data["email"]
+        player.save()
+        user.save()
+        
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
+
         
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
