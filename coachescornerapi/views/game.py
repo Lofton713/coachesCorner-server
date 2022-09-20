@@ -3,6 +3,8 @@ from coachescornerapi.models.game import Game
 from rest_framework.response import Response
 from rest_framework import serializers, status
 from coachescornerapi.models.player import Player
+from coachescornerapi.views.attendee import AttendeeSerializer
+from coachescornerapi.views.coach import CoachSerializer
 
 from coachescornerapi.views.player import PlayerSerializer
 
@@ -85,6 +87,7 @@ class GameView(ViewSet):
         
 class GameSerializer(serializers.ModelSerializer):
     player = PlayerSerializer()
+    attendees = CoachSerializer(many=True)
     class Meta:
         model = Game
         fields = ('id', 'date', 'time', 'description', 'player', 'city', 'state', 'attendees')

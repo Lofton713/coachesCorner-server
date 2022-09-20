@@ -57,6 +57,13 @@ class OpenSpotView(ViewSet):
         serializer = OpenSpotSerializer(open_spot)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     
+    def destroy(self, request, pk):
+        
+        open_spot = Open_spot.objects.get(pk=pk)
+        open_spot.delete()
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
+        
+    
     
         
 class OpenSpotSerializer(serializers.ModelSerializer):

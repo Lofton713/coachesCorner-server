@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from coachescornerapi.models.recruit import Recruit
 from coachescornerapi.views.coach import CoachSerializer
 from coachescornerapi.views.player import PlayerSerializer
+from coachescornerapi.models.coach import Coach
 
 
 class RecruitView(ViewSet):
@@ -39,10 +40,27 @@ class RecruitView(ViewSet):
 
         serializer = RecruitSerializer(recruits, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    def create(self, request):
+        """ POST operation for a new Recruit
+
+        Returns:
+            Response: JSON serialized recruit instance
+        """
+        coach = Coach.objects.get(user=request.auth.user)
+        player = Player.objects.get(pk=request.data["player"])
+        
+        recruit = Recruit.objects.create(
+            coach=coach,
+            player=player
+        )
+
+        serializer = RecruitSerializer(recruit)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class RecruitSerializer(serializers.ModelSerializer):
     """JSON serializer for Recruits"""
     player = PlayerSerializer()
     class Meta:
         model = Recruit
-        fields = ('id',  'coach_id', 'player')
+        fields = ('coach', 'player')
