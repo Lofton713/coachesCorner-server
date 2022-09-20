@@ -32,6 +32,23 @@ class CoachView(ViewSet):
         
         serializer = CoachSerializer(coaches, many=True)
         return Response(serializer.data)
+    
+    def update(self, request, pk):
+        """handle put"""
+        
+        coach = Coach.objects.get(pk=pk)
+        user = User.objects.get(pk=pk)
+        
+        coach.bio = request.data["bio"]
+        coach.college = request.data["college"]
+        
+        user.first_name = request.data["first_name"]
+        user.last_name = request.data["last_name"]
+        user.email = request.data["email"]
+        coach.save()
+        user.save()
+        
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
         
 class UserSerializer(serializers.ModelSerializer):
     class Meta:

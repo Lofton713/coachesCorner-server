@@ -39,7 +39,7 @@ class FavoriteView(ViewSet):
         serializer = FavoriteSerializer(favorites, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
-  
+
     def create(self, request):
         """ POST operation for a new Open Spot
 
