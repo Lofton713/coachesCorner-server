@@ -40,7 +40,7 @@ class CoachView(ViewSet):
         user = User.objects.get(pk=pk)
         
         coach.bio = request.data["bio"]
-        coach.college = request.data["college"]
+        
         
         user.first_name = request.data["first_name"]
         user.last_name = request.data["last_name"]

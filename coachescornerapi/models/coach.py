@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Coach(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="coach")
     college = models.ForeignKey("College", on_delete=models.CASCADE, null=True)
     bio = models.TextField(max_length=200)
     profile_pic = models.ImageField(upload_to='profilepics', height_field=None,

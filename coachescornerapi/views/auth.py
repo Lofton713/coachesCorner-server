@@ -7,6 +7,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
 from coachescornerapi.models import Player, Coach
+from coachescornerapi.views.coach import UserSerializer
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
@@ -22,15 +23,21 @@ def login_user(request):
     # Use the built-in authenticate method to verify
     # authenticate returns the user object or None if no user is found
     authenticated_user = authenticate(username=username, password=password)
-
     # If authentication was successful, respond with their token
+    try: 
+        user = Player.objects.get(user=authenticated_user)
+        
+    except Exception: 
+        user = Coach.objects.get(user=authenticated_user)
     if authenticated_user is not None:
+        
         token = Token.objects.get(user=authenticated_user)
         data = {
             'valid': True,
             'token': token.key,
-            'user_id': authenticated_user.id,
-            'is_staff': authenticated_user.is_staff
+            'user_id': user.id,
+            'is_staff': authenticated_user.is_staff,
+            'is_active': authenticated_user.is_active
         }
         return Response(data)
     else:
@@ -67,7 +74,7 @@ def register_coach(request):
     # Use the REST Framework's token generator on the new user account
     token = Token.objects.create(user=coach.user)
     # Return the token to the client
-    data = { 'token': token.key, 'is_staff': True, 'user_id': new_coach.id }
+    data = { 'token': token.key, 'is_staff': True, 'user_id': coach.id }
     return Response(data)
 
 @api_view(['POST'])
@@ -103,5 +110,5 @@ def register_Player(request):
     # Use the REST Framework's token generator on the new user account
     token = Token.objects.create(user=player.user)
     # Return the token to the client
-    data = { 'token': token.key, 'user_id': new_player.id}
+    data = { 'token': token.key, 'user_id': player.id}
     return Response(data)
