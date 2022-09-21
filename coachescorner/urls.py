@@ -30,6 +30,8 @@ from coachescornerapi.views.game import GameView
 from coachescornerapi.views.open_spot import OpenSpotView
 from coachescornerapi.views.player import PlayerView
 from coachescornerapi.views.recruit import RecruitView
+from coachescornerapi.views.applicant import ApplicantView
+from coachescornerapi.views.attendee import AttendeeView
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'players', PlayerView, 'player')
@@ -39,6 +41,8 @@ router.register(r'open_spots', OpenSpotView, 'open_spot')
 router.register(r'coaches', CoachView, 'coach')
 router.register(r'colleges', CollegeView, 'college')
 router.register(r'favorites', FavoriteView, 'favorite')
+router.register(r'applicants', ApplicantView, 'applicant')
+router.register(r'attendees', AttendeeView, 'attendee')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

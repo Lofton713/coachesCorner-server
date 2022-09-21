@@ -56,6 +56,11 @@ class FavoriteView(ViewSet):
 
         serializer = FavoriteSerializer(favorite)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+    def destroy(self, request, pk):
+        favorite = Favorite.objects.get(pk=pk)
+        favorite.delete()
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
         
         
 class FavoriteSerializer(serializers.ModelSerializer):
@@ -63,6 +68,6 @@ class FavoriteSerializer(serializers.ModelSerializer):
     college = CollegeSerializer()
     class Meta:
         model = Favorite
-        fields = ('college', 'player')
+        fields = ('id','college', 'player')
         
         

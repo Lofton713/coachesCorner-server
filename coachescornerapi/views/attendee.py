@@ -2,6 +2,8 @@ from rest_framework.viewsets import ViewSet
 from coachescornerapi.models.attendee import Attendee
 from rest_framework.response import Response
 from rest_framework import serializers, status
+from coachescornerapi.models.coach import Coach
+from coachescornerapi.models.game import Game
 
 from coachescornerapi.views.coach import CoachSerializer
 from coachescornerapi.views.player import PlayerSerializer
@@ -39,9 +41,9 @@ class AttendeeView(ViewSet):
             Response -- JSON serialized attendee instance
         """
         attendee = Attendee.objects.create(
-        game = request.data['game'],
-        coach = request.data['coach'],
-        player = request.data['player']
+            game = Game.objects.get(pk=request.data["game"]),
+            coach = Coach.objects.get(pk=request.data["coach"]),
+        
             )
 
         serializer = AttendeeSerializer(attendee)
@@ -54,8 +56,8 @@ class AttendeeView(ViewSet):
         
         
 class AttendeeSerializer(serializers.ModelSerializer):
-    player = PlayerSerializer()
+    
     coach = CoachSerializer()
     class Meta:
         model = Attendee
-        fields = ('id','game_id', 'coach', 'player')
+        fields = ('id','game_id', 'coach')

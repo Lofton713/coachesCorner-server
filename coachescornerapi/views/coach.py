@@ -4,8 +4,11 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 from rest_framework.decorators import action
 from django.contrib.auth.models import User
+from coachescornerapi.models.game import Game
 
 from coachescornerapi.views.college import CollegeSerializer
+from coachescornerapi.views.player import PlayerSerializer
+
 
 
 class CoachView(ViewSet):
@@ -37,7 +40,7 @@ class CoachView(ViewSet):
         """handle put"""
         
         coach = Coach.objects.get(pk=pk)
-        user = User.objects.get(pk=pk)
+        user = User.objects.get(coach=coach)
         
         coach.bio = request.data["bio"]
         
@@ -54,11 +57,19 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active')
+class GameSerializer(serializers.ModelSerializer):
+    player = PlayerSerializer()
+
+    class Meta:
+        model = Game
+        fields = ('id', 'date', 'time', 'description', 'player', 'city', 'state')
+        
         
 class CoachSerializer(serializers.ModelSerializer):
     """JSON serializer for Players"""
     user = UserSerializer()
     college = CollegeSerializer()
+    attending = GameSerializer(many=True)
     class Meta:
         model = Coach
-        fields = ('id',  'user', 'bio', 'profile_pic', 'recruits', 'college')
+        fields = ('id',  'user', 'bio', 'profile_pic', 'recruits', 'college', 'attending')

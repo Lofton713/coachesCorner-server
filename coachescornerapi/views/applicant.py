@@ -45,7 +45,7 @@ class ApplicantView(ViewSet):
             Response: JSON serialized open_spot instance
         """
         player = Player.objects.get(user=request.auth.user)
-        open_spot = Open_spot.objects.get(pk=request.data["college"])
+        open_spot = Open_spot.objects.get(pk=request.data["openSpot"])
         
         applicant = Applicant.objects.create(
             player=player,

@@ -39,7 +39,7 @@ class PlayerView(ViewSet):
         """handle put"""
         
         player = Player.objects.get(pk=pk)
-        user = User.objects.get(pk=pk)
+        user = User.objects.get(player=player)
         
         player.bio = request.data["bio"]
         player.birthday = request.data["birthday"]
