@@ -5,6 +5,7 @@ from rest_framework import serializers, status
 from coachescornerapi.models.player import Player
 from coachescornerapi.models.open_spot import Open_spot
 from coachescornerapi.views.open_spot import OpenSpotSerializer
+from django.contrib.auth.models import User
 
 from coachescornerapi.views.player import PlayerSerializer
 
@@ -18,8 +19,8 @@ class ApplicantView(ViewSet):
         """
 
         try:
-            applicant = Applicant.objects.get(pk=pk)
-            serializer = ApplicantSerializer()
+            user = Applicant.objects.get(pk=pk)
+            serializer = ApplicantSerializer(user)
             return Response(serializer.data)
         
         except Applicant.DoesNotExist as ex:
@@ -59,4 +60,4 @@ class ApplicantSerializer(serializers.ModelSerializer):
     open_spot = OpenSpotSerializer()
     class Meta:
         model = Applicant
-        fields = ('open_spot', 'player')
+        fields = ('id','open_spot', 'player')

@@ -58,4 +58,4 @@ class AttendeeSerializer(serializers.ModelSerializer):
     coach = CoachSerializer()
     class Meta:
         model = Attendee
-        fields = ('game_id', 'coach', 'player')
+        fields = ('id','game_id', 'coach', 'player')

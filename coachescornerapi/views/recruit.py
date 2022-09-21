@@ -54,13 +54,19 @@ class RecruitView(ViewSet):
             coach=coach,
             player=player
         )
-
         serializer = RecruitSerializer(recruit)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+        
+    def destroy(self, request, pk):
+        
+        recruit = Recruit.objects.get(pk=pk)
+        recruit.delete()
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
+
 
 class RecruitSerializer(serializers.ModelSerializer):
     """JSON serializer for Recruits"""
     player = PlayerSerializer()
     class Meta:
         model = Recruit
-        fields = ('coach', 'player')
+        fields = ('id','coach', 'player')

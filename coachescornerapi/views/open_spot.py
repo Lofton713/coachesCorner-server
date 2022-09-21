@@ -71,5 +71,6 @@ class OpenSpotSerializer(serializers.ModelSerializer):
     college = CollegeSerializer()
     class Meta:
         model = Open_spot
-        fields = ('college', 'position', 'description', 'posted_by', 'applicants')
+        fields = ('id', 'college', 'position', 'description', 'posted_by', 'applicants')
+        depth = 3
         

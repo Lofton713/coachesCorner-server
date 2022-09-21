@@ -28,6 +28,10 @@ class PlayerView(ViewSet):
         """
         players = Player.objects.all()
         
+        user = request.query_params.get('user', None)
+        if user is not None:
+            players = Player.objects.filter(player=user)
+        
         serializer = PlayerSerializer(players, many=True)
         return Response(serializer.data)
     
