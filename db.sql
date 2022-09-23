@@ -1,2 +1,2 @@
 
-DELETE FROM coachescornerapi_coach
+DELETE FROM coachescornerapi_applicant
